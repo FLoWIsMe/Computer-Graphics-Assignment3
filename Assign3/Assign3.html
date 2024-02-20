@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>Assignment 3 - Intro to WebGL</title>
+
+
+<!-- JIEQIONG: In your vertex and fragment shader, you will want to see what uniform options there are.  HINT: you will need a matrix (mat4) plus some vectors (you have to look that up or pay attention to me in class).  You need to edit both the vertex-shader and the framgent-shader here, nothing else.-->
+
+<!-- Code below is the vertex-shader ---------------------- -->
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec3 vPosition;
+
+void
+main()
+{
+
+    gl_Position = vec4(vPosition, 1.0);
+    gl_Position.x = 0.5*vPosition.x;
+}
+</script>
+
+
+<!-- Code below is the fragment-shader -------------------- -->
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+void
+main()
+{
+    gl_FragColor.r = 1.0;
+    gl_FragColor.g = 0.0;
+    gl_FragColor.b = 0.0;
+    gl_FragColor.a = 1.0;
+     
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="Assign3.js"></script>
+</head>
+
+<body>
+<canvas id="gl-canvas" width="512" height="512" style="border: 2px solid lightgray;">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>
