@@ -1,3 +1,6 @@
+// Name: Daelyn Doughty
+// Assignment: 3
+// Due date: 2/25/2024
 //JIEQIONG: My Global Variables
 var canvas;
 var gl;
@@ -170,7 +173,7 @@ function render() {
 
     requestAnimationFrame(render); // Daelyn: Request the next frame for animation
 }
-// // Daelyn: Alternate render function that does not have colors changing every ms (basically the version to run for those with epilepsy)
+// // Daelyn: Alternate render function that does not have colors changing every ms
 // // Daelyn: Render loop to draw the shapes and handle animations
 // function render() {
 //     gl.clear(gl.COLOR_BUFFER_BIT); // Clear the canvas
