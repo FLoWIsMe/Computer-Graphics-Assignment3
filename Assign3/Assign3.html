@@ -9,32 +9,22 @@
 
 <!-- Code below is the vertex-shader ---------------------- -->
 <script id="vertex-shader" type="x-shader/x-vertex">
-attribute vec3 vPosition;
-
-void
-main()
-{
-
-    gl_Position = vec4(vPosition, 1.0);
-    gl_Position.x = 0.5*vPosition.x;
-}
+    attribute vec3 vPosition;
+    uniform mat4 uMVMatrix; // ModelView Matrix
+        
+    void main() {
+        gl_Position = uMVMatrix * vec4(vPosition, 1.0);
+    }
 </script>
-
-
-<!-- Code below is the fragment-shader -------------------- -->
+    
+<!-- Daelyn: Fragment Shader -->
 <script id="fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+    uniform vec4 uFragColor; // Color
 
-precision mediump float;
-
-void
-main()
-{
-    gl_FragColor.r = 1.0;
-    gl_FragColor.g = 0.0;
-    gl_FragColor.b = 0.0;
-    gl_FragColor.a = 1.0;
-     
-}
+    void main() {
+        gl_FragColor = uFragColor;
+    }
 </script>
 
 <script type="text/javascript" src="../Common/webgl-utils.js"></script>
